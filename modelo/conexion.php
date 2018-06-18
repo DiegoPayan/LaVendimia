@@ -2,7 +2,7 @@
 	
 	//Conection String
 	
-	$mysqli = new mysqli('localhost', 'root', '12345678', 'la_vendimia');
+	$mysqli = new mysqli('159.89.112.44', 'root', '12345678', 'la_vendimia');
 
 	mysqli_set_charset($mysqli, "utf8");
 
