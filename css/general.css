@@ -1,0 +1,28 @@
+
+.bg-navbar{
+	background-color: #345464;
+}
+
+.bg-dropdown-menu{
+	background-color: #416a7e;
+}
+
+.color-dropdown-item{
+	color: #ffffff;
+}
+
+.dropdown-item:hover{
+	color: #ffffff;
+	background-color: #345464;
+}
+
+.mod-info{
+	color: #666666;
+}
+
+.bg-table-head{
+	background-color: #345464;
+	color: #ffffff;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }
