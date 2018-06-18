@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `articulo` (
   `id_articulo` int(11) NOT NULL,
   `descripcion` varchar(70) NOT NULL,
-  `modelo` int(30) DEFAULT NULL,
+  `modelo` varchar(30) DEFAULT NULL,
   `precio` int(11) NOT NULL,
   `existencia` int(11) NOT NULL,
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,

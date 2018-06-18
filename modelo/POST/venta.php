@@ -70,6 +70,25 @@
 			
 		}
 		
+		$query4 = "UPDATE 
+						articulo
+					SET
+						existencia = existencia - ?
+					WHERE
+						id_articulo = ?
+					
+				";
+
+		if($stmt = $mysqli->prepare($query4)){
+			
+			$stmt->bind_param("ii",$cantidad,$id_articulo);
+			
+			$stmt->execute();
+			
+			$stmt->close();
+			
+		}
+		
 	}
 	
 	$respuesta = 1;

@@ -479,21 +479,4 @@ $(document).ready(function(){
 		$('#txt_producto').data('price', datum.precio);
 	});
 	
-	// var datos = {
-		// "id_articulo" : id_articulo,
-		// "cantidad": cantidad_dinamica
-	// }
-	
-	// $.ajax({
-		// url: 'api/api.php/existencia',
-		// type: 'PUT',
-		// data: datos,
-		// success:function(data){
-			// console.log(data);
-		// },
-		// error: function(xhr, desc, err){
-			// console.log(xhr);
-			// console.log("Detalles: " + desc + "\nError: " + err);
-		// }
-	// });
 });
