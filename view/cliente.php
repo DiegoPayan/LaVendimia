@@ -5,6 +5,7 @@
 	</div>
 	<div class="col-md-2 col-2 mt-4">
 		<button class="btn btn-success ml-2" id="btn_nuevo_cliente"><strong><i class="fa fa-user-plus"></i> Nuevo Cliente</strong></button>
+		<strong id="clave_cliente"></strong>
 	</div>
 </div>
 <div class="row">

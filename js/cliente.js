@@ -2,11 +2,6 @@ $(document).ready(function(){
 	
 	$('.nuevo_cliente').hide();
 	
-	$('#btn_nuevo_cliente').click(function(){
-		$('.clientes_registrados').hide();
-		$('.nuevo_cliente').fadeIn('fast');
-	});
-	
 	$.ajax({
 		url: 'api/api.php/clientes',
 		type: 'GET',
@@ -24,6 +19,28 @@ $(document).ready(function(){
 			console.log(xhr);
 			console.log("Detalles: " + desc + "\nError: " + err);
 		}
+	});
+	
+	$('#btn_nuevo_cliente').click(function(){
+		$('#btn_nuevo_cliente').hide();
+		$('.clientes_registrados').hide();
+		$('.nuevo_cliente').fadeIn('fast');
+		
+		$.ajax({
+			url: 'api/api.php/clave_cliente',
+			type: 'GET',
+			dataType: 'JSON',
+			success:function(data){
+				$(data.data).each(function(i,v){
+					$('#clave_cliente').html('Clave: '+ v.id_cliente);
+				});
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Detalles: " + desc + "\nError: " + err);
+			}
+		});
+	
 	});
 	
 	$('#btn_aceptar_cliente').click(function(){

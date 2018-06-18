@@ -2,11 +2,6 @@ $(document).ready(function(){
 	
 	$('.nuevo_articulo').hide();
 	
-	$('#btn_nuevo_cliente').click(function(){
-		$('.articulos_registrados').hide();
-		$('.nuevo_articulo').fadeIn('fast');
-	});
-	
 	$.ajax({
 		url: 'api/api.php/articulos',
 		type: 'GET',
@@ -24,6 +19,27 @@ $(document).ready(function(){
 			console.log(xhr);
 			console.log("Detalles: " + desc + "\nError: " + err);
 		}
+	});
+	
+	$('#btn_nuevo_articulo').click(function(){
+		$('#btn_nuevo_articulo').hide();
+		$('.articulos_registrados').hide();
+		$('.nuevo_articulo').fadeIn('fast');
+		
+		$.ajax({
+			url: 'api/api.php/clave_articulo',
+			type: 'GET',
+			dataType: 'JSON',
+			success:function(data){
+				$(data.data).each(function(i,v){
+					$('#clave_articulo').html('Clave: '+ v.id_articulo);
+				});
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Detalles: " + desc + "\nError: " + err);
+			}
+		});
 	});
 	
 	$('#btn_aceptar_articulo').click(function(){

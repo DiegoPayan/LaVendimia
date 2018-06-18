@@ -32,6 +32,11 @@
 					</div>
 				</li>
 			</ul>
+			<div class="col-md-8 col-8">
+			</div>
+			<div class="col-md-2 col-2 text-right" id="fecha">
+				Fecha
+			</div>
 		</nav>
 		
 		<div class="col-md-12 col-12" id="cuerpo">

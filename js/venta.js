@@ -3,12 +3,48 @@ $(document).ready(function(){
 	$('.nueva_venta').hide();
 	$('#abonos_mensuales').hide();
 	
+	$.ajax({
+		url: 'api/api.php/ventas',
+		type: 'GET',
+		dataType: 'JSON',
+		success:function(data){			
+			$(data.data).each(function(i,v){
+				$('#carga_ventas').append('<tr>'
+											  +'<td>'+v.id_venta+'</td>'
+											  +'<td>'+v.id_cliente+'</td>'
+											  +'<td>'+v.nombre_completo+'</td>'
+											  +'<td>$'+v.total+'</td>'
+											  +'<td>'+v.fecha_creacion+'</td>'
+											+'</tr>');
+			});
+		},
+		error: function(xhr, desc, err){
+			console.log(xhr);
+			console.log("Detalles: " + desc + "\nError: " + err);
+		}
+	});
+	
 	$('#btn_nueva_venta').click(function(){
 		
 		$('.ventas_registradas').hide();
 		$('.nueva_venta').fadeIn('fast');
 		
 		$('#btn_nueva_venta').hide();
+		
+		$.ajax({
+			url: 'api/api.php/clave_venta',
+			type: 'GET',
+			dataType: 'JSON',
+			success:function(data){
+				$(data.data).each(function(i,v){
+					$('#clave_venta').html('Clave: '+ v.id_venta);
+				});
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Detalles: " + desc + "\nError: " + err);
+			}
+		});
 	});
 	
 	var tasa = 0;
@@ -165,6 +201,32 @@ $(document).ready(function(){
 		calculo_enganche_importe();
 	});
 	
+	$('#btn_cancelar').click(function(){
+		
+		swal({
+			title: "¿Desea salir de la pantalla actual?",
+			text: "",
+			type: "warning",
+			showCancelButton: true,
+			cancelButtonClass: "btn-secondary",
+			confirmButtonColor: "#5cb85c",
+			confirmButtonText: "Acepto salir",
+			cancelButtonText: "Cancelar",
+			closeOnConfirm: true,
+			closeOnCancel: true
+		},
+		function(isConfirm) {
+			
+			if (isConfirm) {
+				
+				cargarDiv('view/venta');
+				
+			}
+		  
+		});
+		
+	});
+	
 	$('#btn_siguiente').click(function(){
 		
 		if(calculo_enganche_importe() > 0 && $('#txt_cliente').data('id') > 0){
@@ -253,6 +315,10 @@ $(document).ready(function(){
 						type: "success",
 						timer: 3000
 					});
+					
+					setTimeout(function(){
+						cargarDiv('view/venta');
+					},3100);
 					
 				},
 				error: function(xhr, desc, err){

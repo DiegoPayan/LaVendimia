@@ -25,4 +25,9 @@
 	color: #ffffff;
 }
 
+#fecha{
+	background-color: #345464;
+	color: #ffffff;
+}
+
 .twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }

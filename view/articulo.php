@@ -4,7 +4,8 @@
 		<h5 class="mod-info">Utilice este módulo para consultar, actualizar y crear nuevos Articulos</h5>
 	</div>
 	<div class="col-md-2 col-2 mt-4">
-		<button class="btn btn-success ml-2" id="btn_nuevo_cliente"><strong><i class="fa fa-plus-circle"></i> Nuevo Articulo</strong></button>
+		<button class="btn btn-success ml-2" id="btn_nuevo_articulo"><strong><i class="fa fa-plus-circle"></i> Nuevo Articulo</strong></button>
+		<strong id="clave_articulo"></strong>
 	</div>
 </div>
 <div class="row">

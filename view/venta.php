@@ -5,6 +5,7 @@
 	</div>
 	<div class="col-md-2 col-2 mt-4">
 		<button class="btn btn-success ml-2" id="btn_nueva_venta"><strong><i class="fa fa-plus-circle"></i> Nueva Venta</strong></button>
+		<strong id="clave_venta"></strong>
 	</div>
 </div>
 <div class="row">
@@ -20,7 +21,7 @@
 					</div>
 					<div class="row ml-2">
 						<div class="col-md-11 col-11 ml-5">
-							<table class="table table-hover table-striped">
+							<table class="table table-hover table-striped" id="carga_ventas">
 								<thead class="bg-table-head">
 									<tr>
 										<th scope="col">Folio Venta</th>
@@ -28,18 +29,9 @@
 										<th scope="col">Nombre</th>
 										<th scope="col">Total</th>
 										<th scope="col">Fecha</th>
-										<th scope="col">Estatus</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>1</td>
-										<td>Diego</td>
-										<td>$20.00</td>
-										<td>16 Junio 2018</td>
-										<td>Activo</td>
-									</tr>
 								</tbody>
 							</table>
 						</div>
